@@ -1,17 +1,9 @@
-// Datos de cada semana (puedes personalizar el contenido)
+// Datos de cada semana
 const contenidoSemanas = {
-  1: "Introducción a bases de datos, conceptos fundamentales y modelos de datos.",
-  2: "Modelo relacional y álgebra relacional básica.",
-  3: "Normalización y dependencias funcionales.",
-  4: "SQL: consultas SELECT, filtros y ordenamiento.",
-  5: "SQL: joins, subconsultas y funciones agregadas.",
-  6: "Diseño lógico y físico de bases de datos.",
-  7: "Transacciones y propiedades ACID.",
-  8: "Control de concurrencia y bloqueo de registros.",
-  9: "Recuperación ante fallos y respaldo de datos.",
-  10: "Índices, vistas y optimización de consultas.",
-  11: "Bases de datos distribuidas y replicación.",
-  12: "Tendencias modernas: NoSQL, Big Data y bases en la nube."
+  1: "Aquí puedes acceder a los recursos de la Semana 1 usando los botones.",
+  2: "Contenido de la semana 2 próximamente.",
+  3: "Contenido de la semana 3 próximamente.",
+  4: "Contenido de la semana 4 próximamente."
 };
 
 // Elementos
@@ -20,6 +12,8 @@ const contenido = document.getElementById("contenido-semana");
 const tituloSemana = document.getElementById("titulo-semana");
 const textoSemana = document.getElementById("texto-semana");
 const volverBtn = document.getElementById("volver");
+const botonesSemana = document.getElementById("botones-semana");
+const visor = document.getElementById("visor");
 
 // Manejador de clic en las tarjetas
 document.querySelectorAll(".card").forEach(card => {
@@ -29,11 +23,30 @@ document.querySelectorAll(".card").forEach(card => {
     contenido.classList.remove("hidden");
     tituloSemana.textContent = `Semana ${semana}`;
     textoSemana.textContent = contenidoSemanas[semana] || "Contenido próximamente.";
+
+    // Mostrar botones solo en Semana 1
+    if (semana === "1") {
+      botonesSemana.innerHTML = `
+        <button class="custom-button" onclick="mostrarEnlace('https://miro.com/app/board/uXjVIFahQhU=/?share_link_id=310199185276')">Ver en Miro</button>
+        <button class="custom-button" onclick="mostrarEnlace('https://www.canva.com/design/DAGji3nxKrI/gE5sHO90rC7vXzM64YdERA/view')">Ver en Canva</button>
+      `;
+    } else {
+      botonesSemana.innerHTML = "";
+      visor.classList.add("hidden");
+    }
   });
 });
+
+// Función para mostrar contenido en iframe
+function mostrarEnlace(url) {
+  visor.src = url;
+  visor.classList.remove("hidden");
+}
 
 // Botón volver
 volverBtn.addEventListener("click", () => {
   contenido.classList.add("hidden");
   home.classList.remove("hidden");
+  visor.classList.add("hidden");
+  visor.src = "";
 });

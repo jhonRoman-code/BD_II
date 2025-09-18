@@ -15,62 +15,34 @@
   <main class="container">
     <!-- Pantalla principal -->
     <section id="home" class="grid">
-      <div class="card" data-semana="1">
-        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Semana 1">
-        <h2>Semana 1</h2>
-      </div>
-      <div class="card" data-semana="2">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Semana 2">
-        <h2>Semana 2</h2>
-      </div>
-      <div class="card" data-semana="3">
-        <img src="https://images.unsplash.com/photo-1581090700227-4c4f50b1d3e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Semana 3">
-        <h2>Semana 3</h2>
-      </div>
-      <div class="card" data-semana="4">
-        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Semana 4">
-        <h2>Semana 4</h2>
-      </div>
-      <div class="card" data-semana="5">
-        <img src="https://images.unsplash.com/photo-1603570414975-8e7b2b88180f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Semana 5">
-        <h2>Semana 5</h2>
-      </div>
-      <div class="card" data-semana="6">
-        <img src="https://images.unsplash.com/photo-1581091215367-59abf4b0f5c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Semana 6">
-        <h2>Semana 6</h2>
-      </div>
-      <div class="card" data-semana="7">
-        <img src="https://images.unsplash.com/photo-1620917669960-41f2f7b7c3c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Semana 7">
-        <h2>Semana 7</h2>
-      </div>
-      <div class="card" data-semana="8">
-        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Semana 8">
-        <h2>Semana 8</h2>
-      </div>
-      <div class="card" data-semana="9">
-        <img src="https://images.unsplash.com/photo-1627470924883-7b6c9e3a56c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Semana 9">
-        <h2>Semana 9</h2>
-      </div>
-      <div class="card" data-semana="10">
-        <img src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Semana 10">
-        <h2>Semana 10</h2>
-      </div>
-      <div class="card" data-semana="11">
-        <img src="https://images.unsplash.com/photo-1620918238477-95d85f1e4abc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Semana 11">
-        <h2>Semana 11</h2>
-      </div>
-      <div class="card" data-semana="12">
-        <img src="https://images.unsplash.com/photo-1620850629788-4bcf2f01e7a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Semana 12">
-        <h2>Semana 12</h2>
-      </div>
+      <div class="card" data-semana="1"><h2>Semana 1</h2></div>
+      <div class="card" data-semana="2"><h2>Semana 2</h2></div>
+      <div class="card" data-semana="3"><h2>Semana 3</h2></div>
+      <div class="card" data-semana="4"><h2>Semana 4</h2></div>
+      <div class="card" data-semana="5"><h2>Semana 5</h2></div>
+      <div class="card" data-semana="6"><h2>Semana 6</h2></div>
+      <div class="card" data-semana="7"><h2>Semana 7</h2></div>
+      <div class="card" data-semana="8"><h2>Semana 8</h2></div>
+      <div class="card" data-semana="9"><h2>Semana 9</h2></div>
+      <div class="card" data-semana="10"><h2>Semana 10</h2></div>
+      <div class="card" data-semana="11"><h2>Semana 11</h2></div>
+      <div class="card" data-semana="12"><h2>Semana 12</h2></div>
     </section>
 
-    <!-- Contenido dinámico -->
+    <!-- Contenido de cada semana -->
     <section id="contenido-semana" class="hidden">
       <button id="volver">⬅ Volver</button>
       <h2 id="titulo-semana"></h2>
+
+      <!-- Contenedor de botones -->
       <div id="botones-semana"></div>
-      <iframe id="visor" class="hidden"></iframe>
+
+      <!-- Contenedor con mensaje y iframe -->
+      <div id="visor-contenedor">
+        <div id="visor-mensaje">Aquí podrás ver el contenido que selecciones</div>
+        <iframe id="visor" src=""></iframe>
+      </div>
+
       <p id="texto-semana"></p>
     </section>
   </main>

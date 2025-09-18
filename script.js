@@ -1,52 +1,70 @@
-// Datos de cada semana
+// Datos de cada semana con botones dinámicos
 const contenidoSemanas = {
-  1: "Aquí puedes acceder a los recursos de la Semana 1 usando los botones.",
-  2: "Contenido de la semana 2 próximamente.",
-  3: "Contenido de la semana 3 próximamente.",
-  4: "Contenido de la semana 4 próximamente."
+  1: `
+    <button class="custom-button" onclick="mostrarIframe('docs/S01/Manual Crear Cuenta en GitHub.pdf')">
+      📄 Manual Crear Cuenta en GitHub
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('docs/S01/Manual Subir Pagina Web GitHub.pdf')">
+      🌐 Manual Subir Página Web GitHub
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('docs/S01/Informe Tecnico.pdf')">
+      📝 Informe Técnico
+    </button>
+  `,
+  2: `
+    <button class="custom-button" onclick="mostrarIframe('docs/S02/Manual SQL Server.pdf')">
+      🗄️ Manual SQL Server
+    </button>
+    <button class="custom-button" onclick="mostrarMensaje('Contenido en construcción...')">
+      ⚙️ Desarrollo Ejemplo 01
+    </button>
+  `
 };
 
-// Elementos
+// Referencias a elementos
 const home = document.getElementById("home");
 const contenido = document.getElementById("contenido-semana");
 const tituloSemana = document.getElementById("titulo-semana");
-const textoSemana = document.getElementById("texto-semana");
 const volverBtn = document.getElementById("volver");
 const botonesSemana = document.getElementById("botones-semana");
 const visor = document.getElementById("visor");
+const visorMensaje = document.getElementById("visor-mensaje");
 
-// Manejador de clic en las tarjetas
+// Mostrar PDF en iframe
+function mostrarIframe(url) {
+  visor.src = url;
+  visorMensaje.style.display = "none"; // Oculta el mensaje
+  visor.style.background = "white"; // Para que el PDF sea visible
+}
+
+// Mostrar mensaje cuando no hay contenido
+function mostrarMensaje(texto) {
+  visor.src = "";
+  visor.style.background = "transparent";
+  visorMensaje.textContent = texto;
+  visorMensaje.style.display = "block";
+}
+
+// Mostrar el contenido de cada semana
 document.querySelectorAll(".card").forEach(card => {
   card.addEventListener("click", () => {
     const semana = card.dataset.semana;
     home.classList.add("hidden");
     contenido.classList.remove("hidden");
     tituloSemana.textContent = `Semana ${semana}`;
-    textoSemana.textContent = contenidoSemanas[semana] || "Contenido próximamente.";
-
-    // Mostrar botones solo en Semana 1
-    if (semana === "1") {
-      botonesSemana.innerHTML = `
-        <button class="custom-button" onclick="mostrarEnlace('https://miro.com/app/board/uXjVIFahQhU=/?share_link_id=310199185276')">Ver en Miro</button>
-        <button class="custom-button" onclick="mostrarEnlace('https://www.canva.com/design/DAGji3nxKrI/gE5sHO90rC7vXzM64YdERA/view')">Ver en Canva</button>
-      `;
-    } else {
-      botonesSemana.innerHTML = "";
-      visor.classList.add("hidden");
-    }
+    botonesSemana.innerHTML = contenidoSemanas[semana] || "Contenido próximamente.";
+    visor.src = "";
+    visor.style.background = "transparent";
+    visorMensaje.style.display = "block"; // Muestra mensaje por defecto
+    visorMensaje.textContent = "Aquí podrás ver el contenido que selecciones";
   });
 });
-
-// Función para mostrar contenido en iframe
-function mostrarEnlace(url) {
-  visor.src = url;
-  visor.classList.remove("hidden");
-}
 
 // Botón volver
 volverBtn.addEventListener("click", () => {
   contenido.classList.add("hidden");
   home.classList.remove("hidden");
-  visor.classList.add("hidden");
   visor.src = "";
+  visorMensaje.style.display = "block";
+  visorMensaje.textContent = "Aquí podrás ver el contenido que selecciones";
 });

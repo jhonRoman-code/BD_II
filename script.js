@@ -1,6 +1,17 @@
-// Datos de cada semana con botones dinámicos
+// === Toggle menú hamburguesa ===
+const menuToggle = document.getElementById("menu-toggle");
+const menuList = document.getElementById("menu-list");
+
+if (menuToggle && menuList) {
+  menuToggle.addEventListener("click", () => {
+    menuList.style.display = menuList.style.display === "block" ? "none" : "block";
+  });
+}
+
+// === Contenido de cada semana ===
 const contenidoSemanas = {
   1: `
+    
     <button class="custom-button" onclick="mostrarIframe('docs/S01/Manual Crear Cuenta en GitHub.pdf')">
       📄 Manual Crear Cuenta en GitHub
     </button>
@@ -18,53 +29,55 @@ const contenidoSemanas = {
     <button class="custom-button" onclick="mostrarMensaje('Contenido en construcción...')">
       ⚙️ Desarrollo Ejemplo 01
     </button>
+  `,
+  3: `
+    <p>Contenido proximamente...</p>
   `
 };
 
-// Referencias a elementos
-const home = document.getElementById("home");
-const contenido = document.getElementById("contenido-semana");
+// === Referencias ===
 const tituloSemana = document.getElementById("titulo-semana");
-const volverBtn = document.getElementById("volver");
-const botonesSemana = document.getElementById("botones-semana");
-const visor = document.getElementById("visor");
-const visorMensaje = document.getElementById("visor-mensaje");
+const contenido = document.getElementById("contenido-semana");
 
-// Mostrar PDF en iframe
+// === Mostrar PDFs ===
 function mostrarIframe(url) {
-  visor.src = url;
-  visorMensaje.style.display = "none"; // Oculta el mensaje
-  visor.style.background = "white"; // Para que el PDF sea visible
+  const visor = document.getElementById("visor");
+  const visorMensaje = document.getElementById("visor-mensaje");
+  if (visor) {
+    visor.src = url;
+    visor.style.display = "block";
+  }
+  if (visorMensaje) {
+    visorMensaje.style.display = "none";
+  }
 }
 
-// Mostrar mensaje cuando no hay contenido
+// === Mostrar mensajes ===
 function mostrarMensaje(texto) {
-  visor.src = "";
-  visor.style.background = "transparent";
-  visorMensaje.textContent = texto;
-  visorMensaje.style.display = "block";
+  const visor = document.getElementById("visor");
+  const visorMensaje = document.getElementById("visor-mensaje");
+  if (visor) {
+    visor.src = "";
+    visor.style.display = "none";
+  }
+  if (visorMensaje) {
+    visorMensaje.textContent = texto;
+    visorMensaje.style.display = "block";
+  }
 }
 
-// Mostrar el contenido de cada semana
-document.querySelectorAll(".card").forEach(card => {
-  card.addEventListener("click", () => {
-    const semana = card.dataset.semana;
-    home.classList.add("hidden");
-    contenido.classList.remove("hidden");
-    tituloSemana.textContent = `Semana ${semana}`;
-    botonesSemana.innerHTML = contenidoSemanas[semana] || "Contenido próximamente.";
-    visor.src = "";
-    visor.style.background = "transparent";
-    visorMensaje.style.display = "block"; // Muestra mensaje por defecto
-    visorMensaje.textContent = "Aquí podrás ver el contenido que selecciones";
-  });
-});
-
-// Botón volver
-volverBtn.addEventListener("click", () => {
-  contenido.classList.add("hidden");
-  home.classList.remove("hidden");
-  visor.src = "";
-  visorMensaje.style.display = "block";
-  visorMensaje.textContent = "Aquí podrás ver el contenido que selecciones";
-});
+// === Mostrar contenido de semana ===
+function mostrarSemana(num) {
+  if (tituloSemana) {
+    tituloSemana.textContent = `Semana ${num}`;
+  }
+  if (contenido) {
+    contenido.innerHTML = `
+      ${contenidoSemanas[num] || "<p>Contenido próximamente...</p>"}
+      <div id="visor-contenedor">
+        <iframe id="visor" class="visor"></iframe>
+        <div id="visor-mensaje" class="visor-mensaje">Selecciona un archivo para verlo aquí</div>
+      </div>
+    `;
+  }
+}

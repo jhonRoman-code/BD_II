@@ -25,7 +25,7 @@ body {
 }
 
 .logo {
-  height: 45px;
+  height: 75px;
   width: auto;
 }
 
@@ -79,6 +79,7 @@ body {
 }
 
 /* === Principal === */
+/* Contenedor principal */
 .principal {
   flex: 1;
   display: flex;
@@ -86,19 +87,100 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(to bottom, #f9f9f9, #eef3f7); /* degradado suave */
 }
 
+/* Título principal */
 .welcome {
-  font-size: 2.5rem;
-  color: #1a5276;
+  font-size: 2.8rem;
+  color: #0d3c61;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1); /* sombra suave */
 }
 
-.subtext {
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  color: #444;
+/* Subtítulos */
+.subtitle {
+  font-size: 1.8rem;
+  color: #154360;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  border-bottom: 2px solid #1a5276;
+  display: inline-block;
+  padding-bottom: 0.3rem;
 }
+
+/* Texto general */
+.subtext {
+  font-size: 1.15rem;
+  margin: 1rem auto;
+  color: #333;
+  line-height: 1.8;
+  max-width: 850px;
+}
+
+/* Lista de características */
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  max-width: 750px;
+  text-align: left;
+}
+
+.features li {
+  background: #fff;
+  margin: 0.8rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.features li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+.footer {
+  background: #1a5276;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.95rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .welcome {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+  }
+
+  .subtext {
+    font-size: 1rem;
+    max-width: 95%;
+  }
+
+  .features li {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
+
 
 /* === Login === */
 .login-container {

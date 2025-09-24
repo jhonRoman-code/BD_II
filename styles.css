@@ -314,11 +314,66 @@ body {
   color: #555;
 }
 
-/* Footer */
-footer {
-  background: #154360;
-  color: white;
+
+
+
+.about {
   text-align: center;
-  padding: 1rem;
-  margin-top: auto;
+  padding: 3rem 2rem;
+  background: #f9f9f9;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #1a5276;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0d3c61;
+  margin-bottom: 0.3rem;
+}
+
+.career {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #154360;
+  margin-bottom: 1.2rem;
+}
+
+.about-text {
+  text-align: center;
+  max-width: 700px;
+}
+
+/* Para que siempre quede abajo */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1; /* empuja el footer hacia abajo */
+}
+
+footer {
+  text-align: center;
+  padding: 15px 0;
+  background: #083c5c; /* o tu color */
+  color: #fff;
 }

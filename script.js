@@ -26,12 +26,15 @@ const contenidoSemanas = {
     <button class="custom-button" onclick="mostrarIframe('docs/S02/Manual SQL Server.pdf')">
       🗄️ Manual SQL Server
     </button>
-    <button class="custom-button" onclick="mostrarMensaje('Contenido en construcción...')">
-      ⚙️ Desarrollo Ejemplo 01
+    <button class="custom-button" onclick="mostrarIframe('docs/S02/modelo01.png')">
+      ⚙️ Desarrollo Enunciado 1
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('docs/S02/modelo02.png')">
+      ⚙️ Desarrollo Enunciado 2
     </button>
   `,
   3: `
-    <p>Contenido proximamente...</p>
+    <p>Contenido próximamente...</p>
   `
 };
 
@@ -69,7 +72,7 @@ function mostrarMensaje(texto) {
 // === Mostrar contenido de semana ===
 function mostrarSemana(num) {
   if (tituloSemana) {
-    tituloSemana.textContent = `Semana ${num}`;
+    tituloSemana.textContent = `Contenido semana ${num}`;
   }
   if (contenido) {
     contenido.innerHTML = `

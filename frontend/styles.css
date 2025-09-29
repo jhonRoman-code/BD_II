@@ -377,3 +377,90 @@ footer {
   background: #083c5c; /* o tu color */
   color: #fff;
 }
+
+/* === Botones especiales === */
+.btn {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 1rem;
+  margin: 0.3rem;
+}
+
+.btn-primary {
+  background: #2874a6;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1f618d;
+}
+
+.btn-danger {
+  background: #c0392b;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #922b21;
+}
+
+.btn-warning {
+  background: #f39c12;
+  color: white;
+}
+
+.btn-warning:hover {
+  background: #d68910;
+}
+
+/* === Mensaje de bienvenida === */
+#welcome-message {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  color: #154360;
+  font-weight: 600;
+}
+
+/* === Panel de administración === */
+#admin-panel {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+#admin-panel a {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  background: #2874a6;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#admin-panel a:hover {
+  background: #1f618d;
+}
+
+/* === Formulario editar perfil === */
+#edit-profile {
+  display: none;
+  background: #fff;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  border-radius: 8px;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+#edit-profile input {
+  width: 90%;
+  margin: 0.5rem 0;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}

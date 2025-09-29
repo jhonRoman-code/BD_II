@@ -10,7 +10,7 @@
   <!-- Barra superior -->
   <header class="navbar">
     <div class="logo-container">
-      <img src="logo/logo.png" alt="Logo" class="logo">
+      <img src="assets/logo/logo.png" alt="Logo" class="logo">
     </div>
     <div class="title-container">
       <h1>BASE DE DATOS II</h1>
@@ -50,6 +50,17 @@
     <!-- Contenido dinámico -->
     <section class="contenido">
       <h2 id="titulo-semana">Selecciona una semana</h2>
+      
+      <!-- Formulario de subida (solo admin) -->
+      <div id="form-subida" style="display:none; margin-bottom:20px;">
+        <h3>Subir archivo</h3>
+        <form id="uploadForm" enctype="multipart/form-data">
+          <input type="file" name="archivo" id="archivo" required>
+          <button type="submit">Subir</button>
+        </form>
+      </div>
+
+      <!-- Contenido dinámico -->
       <div id="contenido-semana">
         <p>Elige una semana del menú lateral para ver su contenido aquí.</p>
       </div>

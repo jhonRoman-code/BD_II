@@ -9,7 +9,7 @@
 <body>
   <header class="navbar">
     <div class="logo-container">
-      <img src="logo/logo.png" alt="Logo" class="logo">
+      <img src="assets/logo/logo.png" alt="Logo" class="logo">
     </div>
     <div class="title-container">
       <h1>Base de Datos II</h1>
@@ -27,17 +27,46 @@
 
   <main class="login-container">
     <h2>Iniciar Sesión</h2>
-    <form>
-      <input type="text" placeholder="Usuario" required>
-      <input type="password" placeholder="Contraseña" required>
-      <button type="submit">Ingresar</button>
+    <form id="loginForm">
+      <input type="text" id="usuario" placeholder="Usuario" required>
+      <input type="password" id="contrasena" placeholder="Contraseña" required>
+      <button type="submit" class="btn btn-primary">Ingresar</button>
     </form>
+    <p id="mensaje" style="color: red; margin-top:10px;"></p>
   </main>
 
   <footer>
     <p>© 2025 - Proyecto Base de Datos II</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const usuario = document.getElementById("usuario").value;
+      const contrasena = document.getElementById("contrasena").value;
+
+      try {
+        const res = await fetch("http://localhost:3000/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ usuario, contrasena })
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          localStorage.setItem("rol", data.rol);
+          localStorage.setItem("usuario", data.usuario || usuario);
+
+          alert(`Bienvenido ${data.rol === "admin" ? "Administrador" : "Usuario"} ${usuario}`);
+          window.location.href = "index.html";
+        } else {
+          document.getElementById("mensaje").textContent = "Usuario o contraseña incorrectos";
+        }
+      } catch (err) {
+        document.getElementById("mensaje").textContent = "Error de conexión con el servidor";
+      }
+    });
+  </script>
 </body>
 </html>

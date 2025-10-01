@@ -1,18 +1,16 @@
-// backend/db.js
-const sql = require("mssql/msnodesqlv8");
+const sql = require("mssql");
 
-const config = {
-  connectionString: "Driver={ODBC Driver 17 for SQL Server};Server=localhost;Database=BD_Proyecto;Trusted_Connection=Yes;"
-};
+// Tomar la cadena de conexión definida en Azure App Service
+const connectionString = process.env.DefaultConnection;
 
-const poolPromise = new sql.ConnectionPool(config)
+const poolPromise = new sql.ConnectionPool(connectionString)
   .connect()
   .then(pool => {
-    console.log("✅ Conectado a SQL Server con Windows Authentication");
+    console.log("✅ Conectado a Azure SQL Database");
     return pool;
   })
   .catch(err => {
-    console.error("❌ Error de conexión:", err);
+    console.error("❌ Error de conexión a Azure SQL:", err);
   });
 
 module.exports = { sql, poolPromise };

@@ -1,7 +1,7 @@
 const sql = require("mssql");
 
 // Tomar la cadena de conexión definida en Azure App Service
-const connectionString = process.env.DefaultConnection;
+const connectionString = process.env.conexionprueba;
 
 const poolPromise = new sql.ConnectionPool(connectionString)
   .connect()

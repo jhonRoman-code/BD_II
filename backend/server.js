@@ -10,14 +10,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Carpeta para guardar archivos subidos
+// 📂 Carpeta para guardar archivos subidos
 const uploadPath = path.join(__dirname, "uploads");
 if (!fs.existsSync(uploadPath)) fs.mkdirSync(uploadPath);
 
-// Servir archivos subidos
+// 📂 Servir archivos subidos de forma pública
 app.use("/uploads", express.static(uploadPath));
 
-// Configuración de multer
+// ⚡ Configuración de multer
 const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, uploadPath),
   filename: (req, file, cb) => {
@@ -26,6 +26,11 @@ const storage = multer.diskStorage({
   }
 });
 const upload = multer({ storage });
+
+/* === RUTA PRINCIPAL === */
+app.get("/", (req, res) => {
+  res.send("🚀 API corriendo correctamente en Azure Web App");
+});
 
 /* === LOGIN === */
 app.post("/login", async (req, res) => {
@@ -112,8 +117,8 @@ app.delete("/archivo/:id", async (req, res) => {
   }
 });
 
-// Iniciar servidor
-const PORT = process.env.PORT || 3000; // 👈 IMPORTANTE para Azure
+// 🚀 Iniciar servidor
+const PORT = process.env.PORT || 3000; // ⚠️ Azure usa process.env.PORT
 app.listen(PORT, () => {
   console.log(`🚀 Servidor corriendo en el puerto ${PORT}`);
 });

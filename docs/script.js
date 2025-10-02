@@ -99,6 +99,11 @@ const contenidoSemanas = {
       ⚙️ Desarrollo Enunciado 2
     </button>
   `,
+   4: `
+    <button class="custom-button" onclick="mostrarIframe('assets/docs/S04/DISEÑO DE ARQUITECTURA.pdf')">
+      🗄️ Diseño de Arquitecturas de Base de Datos 
+    </button>
+  `,
 };
 
 const tituloSemana = document.getElementById("titulo-semana");

@@ -103,6 +103,9 @@ const contenidoSemanas = {
     <button class="custom-button" onclick="mostrarIframe('assets/docs/S04/DISEÑO DE ARQUITECTURA.pdf')">
       🗄️ Diseño de Arquitecturas de Base de Datos 
     </button>
+    <button class="custom-button" onclick="mostrarIframe('assets/docs/S04/semana04-2.pdf')">
+      🗄️ Analisis y diseño de la Arquitectura de Base de Datos
+    </button>
   `,
 };
 

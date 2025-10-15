@@ -107,6 +107,15 @@ const contenidoSemanas = {
       🗄️ Analisis y diseño de la Arquitectura de Base de Datos
     </button>
   `,
+  5: `
+    <button class="custom-button" onclick="mostrarIframe('assets/docs/S04/ManualAzure.pdf')">
+      🗄️ Manual para crear cuenta en Azure
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('assets/docs/S04/RepositorioAzure.pdf')">
+      🗄️ Manual para subir repositorio en Azure
+    </button>
+  `,  
+  
 };
 
 const tituloSemana = document.getElementById("titulo-semana");

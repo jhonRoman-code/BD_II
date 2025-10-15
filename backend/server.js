@@ -117,8 +117,9 @@ app.delete("/archivo/:id", async (req, res) => {
   }
 });
 
-// 🚀 Iniciar servidor
-const PORT = process.env.PORT || 3000; // ⚠️ Azure usa process.env.PORT
-app.listen(PORT, () => {
-  console.log(`🚀 Servidor corriendo en el puerto ${PORT}`);
+// Servidor
+const PORT = process.env.PORT || 5500; 
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
+

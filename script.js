@@ -111,6 +111,12 @@ const contenidoSemanas = {
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S04/semana04-2.pdf')">
       🗄️ Analisis y diseño de la Arquitectura de Base de Datos
     </button>
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S04/Normalización y Denormalización.pdf')">
+      🗄️ Normalización y Denormalización 
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S04/Criterio de Seleccion Para Startup.pdf')">
+      🗄️ Criterio de Seleccion Para Startup
+    </button>
   `,
   5: `
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S04/ManualAzure.pdf')">

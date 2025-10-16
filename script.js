@@ -99,6 +99,11 @@ const contenidoSemanas = {
       ⚙️ Desarrollo Enunciado 2
     </button>
   `,
+  3: `
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S03/CuadroComp.pdf')">
+      🗄️ Cuadro Comparativo
+    </button>
+  `,
    4: `
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S04/DISEÑO DE ARQUITECTURA.pdf')">
       🗄️ Diseño de Arquitecturas de Base de Datos 

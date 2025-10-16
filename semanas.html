@@ -9,22 +9,21 @@
 <body>
   <!-- Barra superior -->
   <header class="navbar">
-  <div class="logo-container">
-    <img src="arch/img/logo.png" alt="Logo" class="logo">
-  </div>
-  <div class="title-container"> 
-    <h1>Base de Datos II</h1>
-    <h3>ROMAN ROQUE JHON SMITH</h3>
-  </div>
-  <nav class="menu">
-    <ul class="menu-list" id="menu-list">
-      <li><a href="index.html" class="menu-item">Inicio</a></li>
-      <li><a href="login.html" class="menu-item">Login</a></li>
-      <li><a href="#" id="logout-link" style="display:none;">Cerrar sesión</a></li>
-    </ul>
-  </nav>
-</header>
-
+    <div class="logo-container">
+      <img src="arch/img/logo.png" alt="Logo" class="logo">
+    </div>
+    <div class="title-container"> 
+      <h1>Base de Datos II</h1>
+      <h3>ROMAN ROQUE JHON SMITH</h3>
+    </div>
+    <nav class="menu">
+      <ul class="menu-list" id="menu-list">
+        <li><a href="index.html" class="menu-item">Inicio</a></li>
+        <li><a href="login.html" class="menu-item">Login</a></li>
+        <li><a href="#" id="logout-link" style="display:none;">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- Layout con sidebar -->
   <main class="layout">
@@ -44,7 +43,18 @@
         <li><button onclick="mostrarSemana(10)">Semana 10</button></li>
         <li><button onclick="mostrarSemana(11)">Semana 11</button></li>
         <li><button onclick="mostrarSemana(12)">Semana 12</button></li>
+        <li><button onclick="mostrarSemana(13)">Semana 13</button></li>
+        <li><button onclick="mostrarSemana(14)">Semana 14</button></li>
+        <li><button onclick="mostrarSemana(15)">Semana 15</button></li>
+        <li><button onclick="mostrarSemana(16)">Semana 16</button></li>
       </ul>
+
+      <!-- Botón de acceso al repositorio -->
+      <div class="repositorio-container">
+        <button class="btn-repo" onclick="window.open('https://github.com/jhonRoman-code/BD_II/tree/master/arch/cont', '_blank')">
+          Mostrar contenido en repositorio GitHub
+        </button>
+      </div>
     </aside>
 
     <!-- Contenido dinámico -->
@@ -72,5 +82,28 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- Estilos internos opcionales -->
+  <style>
+    .repositorio-container {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .btn-repo {
+      background-color: #24292e;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-repo:hover {
+      background-color: #0366d6;
+    }
+  </style>
 </body>
 </html>

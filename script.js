@@ -119,8 +119,17 @@ const contenidoSemanas = {
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S04/RepositorioAzure.pdf')">
       🗄️ Manual para subir repositorio en Azure
     </button>
-  `,  
-  
+  `,
+  6: `
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S06/script sql.pdf')">
+      🗄️ Desarrollo Enunciados Semana 06
+    </button>
+  `,
+  7: `
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/01_Crear_BD_QhatuPERU.sql')">
+      🗄️ Script Base de datos QhatuPERU
+    </button>
+  `,
 };
 
 const tituloSemana = document.getElementById("titulo-semana");

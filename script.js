@@ -127,7 +127,7 @@ const contenidoSemanas = {
     </button>
   `,
   6: `
-    <button class="custom-button" onclick="mostrarIframe('arch/cont/S06/script sql.pdf')">
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S06/Desarrollo de enunciados.pdf')">
       🗄️ Desarrollo Enunciados Semana 06
     </button>
   `,

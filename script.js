@@ -78,40 +78,40 @@ if (savedPic) document.getElementById("profile-pic").src = savedPic;
 // === Contenido de semanas (local + BD) ===
 const contenidoSemanas = {
   1: `
-    <button class="custom-button" onclick="mostrarIframe('assets/docs/S01/Manual Crear Cuenta en GitHub.pdf')">
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S01/Manual Crear Cuenta en GitHub.pdf')">
       📄 Manual Crear Cuenta en GitHub
     </button>
-    <button class="custom-button" onclick="mostrarIframe('assets/docs/S01/Manual Subir Pagina Web GitHub.pdf')">
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S01/Manual Subir Pagina Web GitHub.pdf')">
       🌐 Manual Subir Página Web GitHub
     </button>
-    <button class="custom-button" onclick="mostrarIframe('assets/docs/S01/Informe Tecnico.pdf')">
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S01/Informe Tecnico.pdf')">
       📝 Informe Técnico
     </button>
   `,
   2: `
-    <button class="custom-button" onclick="mostrarIframe('assets/docs/S02/Manual SQL Server.pdf')">
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S02/Manual SQL Server.pdf')">
       🗄️ Manual SQL Server
     </button>
-    <button class="custom-button" onclick="mostrarIframe('assets/docs/S02/modelo01.png')">
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S02/modelo01.png')">
       ⚙️ Desarrollo Enunciado 1
     </button>
-    <button class="custom-button" onclick="mostrarIframe('assets/docs/S02/modelo02.png')">
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S02/modelo02.png')">
       ⚙️ Desarrollo Enunciado 2
     </button>
   `,
    4: `
-    <button class="custom-button" onclick="mostrarIframe('assets/docs/S04/DISEÑO DE ARQUITECTURA.pdf')">
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S04/DISEÑO DE ARQUITECTURA.pdf')">
       🗄️ Diseño de Arquitecturas de Base de Datos 
     </button>
-    <button class="custom-button" onclick="mostrarIframe('assets/docs/S04/semana04-2.pdf')">
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S04/semana04-2.pdf')">
       🗄️ Analisis y diseño de la Arquitectura de Base de Datos
     </button>
   `,
   5: `
-    <button class="custom-button" onclick="mostrarIframe('assets/docs/S04/ManualAzure.pdf')">
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S04/ManualAzure.pdf')">
       🗄️ Manual para crear cuenta en Azure
     </button>
-    <button class="custom-button" onclick="mostrarIframe('assets/docs/S04/RepositorioAzure.pdf')">
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S04/RepositorioAzure.pdf')">
       🗄️ Manual para subir repositorio en Azure
     </button>
   `,  
@@ -165,7 +165,7 @@ async function mostrarSemana(num) {
       html += "<p>No hay archivos subidos para esta semana.</p>";
     }
   } catch {
-    html += "<p style='color:red;'>Error al cargar archivos de la base de datos</p>";
+    html += "<p style='color:red;'></p>";
   }
 
   if (contenido) {

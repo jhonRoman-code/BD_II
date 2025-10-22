@@ -119,10 +119,10 @@ const contenidoSemanas = {
     </button>
   `,
   5: `
-    <button class="custom-button" onclick="mostrarIframe('arch/cont/S04/ManualAzure.pdf')">
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S05/ManualAzure.pdf')">
       🗄️ Manual para crear cuenta en Azure
     </button>
-    <button class="custom-button" onclick="mostrarIframe('arch/cont/S04/RepositorioAzure.pdf')">
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S05/RepositorioAzure.pdf')">
       🗄️ Manual para subir repositorio en Azure
     </button>
   `,
@@ -132,11 +132,24 @@ const contenidoSemanas = {
     </button>
   `,
   7: `
-    <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/01_Crear_BD_QhatuPERU.sql')">
-      🗄️ Script Base de datos QhatuPERU
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/ManualAzure.pdf')">
+      🗄️ Manual para crear cuenta en Azure
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/RepositorioAzure.pdf')">
+      🗄️ Manual para subir repositorio en Azure
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/BD_QHATUPERU.pdf')">
+      🗄️ Manual QHATUPERU
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/QhatuPERU')">
+      Scripts de QhatuPERU en GitHub
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/Consultas')">
+      📁 Consultas SQL Completas en GitHub
     </button>
   `,
 };
+
 
 const tituloSemana = document.getElementById("titulo-semana");
 const contenido = document.getElementById("contenido-semana");
@@ -246,3 +259,4 @@ async function eliminarArchivo(id, semana) {
     alert("Error de conexión al servidor");
   }
 }
+

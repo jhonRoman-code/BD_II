@@ -141,11 +141,11 @@ const contenidoSemanas = {
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/BD_QHATUPERU.pdf')">
       🗄️ Manual QHATUPERU
     </button>
-    <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/QhatuPERU')">
-      Scripts de QhatuPERU en GitHub
+    <button class="custom-button" onclick="window.open('https://github.com/jhonRoman-code/BD_II/tree/master/arch/cont/S07/QhatuPERU', '_blank')">
+    📁 Scripts de QhatuPERU en GitHub
     </button>
-    <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/Consultas')">
-      📁 Consultas SQL Completas en GitHub
+    <button class="custom-button" onclick="window.open('https://github.com/jhonRoman-code/BD_II/tree/master/arch/cont/S07/Consultas', '_blank')">
+    📁 Consultas SQL Completas en GitHub
     </button>
   `,
 };

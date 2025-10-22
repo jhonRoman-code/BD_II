@@ -138,7 +138,7 @@ const contenidoSemanas = {
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/RepositorioAzure.pdf')">
       🗄️ Manual para subir repositorio en Azure
     </button>
-    <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/BD_QHATUPERU.pdf')">
+    <button class="custom-button" onclick="window.open('https://www.canva.com/design/DAG2hSK7urQ/-efxqf8fd2QmLai-_JLjqA/view?utm_content=DAG2hSK7urQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2690030ce0', '_blank')">
       🗄️ Manual QHATUPERU
     </button>
     <button class="custom-button" onclick="window.open('https://github.com/jhonRoman-code/BD_II/tree/master/arch/cont/S07/QhatuPERU', '_blank')">

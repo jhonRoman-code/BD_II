@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Barra superior -->
   <header class="navbar">
     <div class="logo-container">
       <img src="arch/img/logo.png" alt="Logo" class="logo">
@@ -25,85 +24,93 @@
     </nav>
   </header>
 
-  <!-- Layout con sidebar -->
-  <main class="layout">
+  <main class="weeks-layout">
     <!-- Sidebar de semanas -->
-    <aside class="sidebar">
-      <h2>CONTENIDO</h2>
-      <ul>
-        <li><button onclick="mostrarSemana(1)">Semana 1</button></li>
-        <li><button onclick="mostrarSemana(2)">Semana 2</button></li>
-        <li><button onclick="mostrarSemana(3)">Semana 3</button></li>
-        <li><button onclick="mostrarSemana(4)">Semana 4</button></li>
-        <li><button onclick="mostrarSemana(5)">Semana 5</button></li>
-        <li><button onclick="mostrarSemana(6)">Semana 6</button></li>
-        <li><button onclick="mostrarSemana(7)">Semana 7</button></li>
-        <li><button onclick="mostrarSemana(8)">Semana 8</button></li>
-        <li><button onclick="mostrarSemana(9)">Semana 9</button></li>
-        <li><button onclick="mostrarSemana(10)">Semana 10</button></li>
-        <li><button onclick="mostrarSemana(11)">Semana 11</button></li>
-        <li><button onclick="mostrarSemana(12)">Semana 12</button></li>
-        <li><button onclick="mostrarSemana(13)">Semana 13</button></li>
-        <li><button onclick="mostrarSemana(14)">Semana 14</button></li>
-        <li><button onclick="mostrarSemana(15)">Semana 15</button></li>
-        <li><button onclick="mostrarSemana(16)">Semana 16</button></li>
-      </ul>
+    <aside class="weeks-sidebar" id="weeks-sidebar">
+      <div class="sidebar-header">
+        <h2>CONTENIDO</h2>
+        <div class="sidebar-divider"></div>
+      </div>
+      
+      <nav class="weeks-nav">
+        <div class="weeks-grid">
+          <button class="week-btn" onclick="mostrarSemana(1)">
+            <span class="week-number">Semana 1</span>
+          </button>
+          <button class="week-btn" onclick="mostrarSemana(2)">
+            <span class="week-number">Semana 2</span>
+          </button>
+          <button class="week-btn" onclick="mostrarSemana(3)">
+            <span class="week-number">Semana 3</span>
+          </button>
+          <button class="week-btn" onclick="mostrarSemana(4)">
+            <span class="week-number">Semana 4</span>
+          </button>
+          <button class="week-btn" onclick="mostrarSemana(5)">
+            <span class="week-number">Semana 5</span>
+          </button>
+          <button class="week-btn" onclick="mostrarSemana(6)">
+            <span class="week-number">Semana 6</span>
+          </button>
+          <button class="week-btn" onclick="mostrarSemana(7)">
+            <span class="week-number">Semana 7</span>
+          </button>
+          <button class="week-btn" onclick="mostrarSemana(8)">
+            <span class="week-number">Semana 8</span>
+          </button>
+          <button class="week-btn" onclick="mostrarSemana(9)">
+            <span class="week-number">Semana 9</span>
+          </button>
+          <button class="week-btn" onclick="mostrarSemana(10)">
+            <span class="week-number">Semana 10</span>
+          </button>
+          <button class="week-btn" onclick="mostrarSemana(11)">
+            <span class="week-number">Semana 11</span>
+          </button>
+          <button class="week-btn" onclick="mostrarSemana(12)">
+            <span class="week-number">Semana 12</span>
+          </button>
+          <button class="week-btn" onclick="mostrarSemana(13)">
+            <span class="week-number">Semana 13</span>
+          </button>
+          <button class="week-btn" onclick="mostrarSemana(14)">
+            <span class="week-number">Semana 14</span>
+          </button>
+          <button class="week-btn" onclick="mostrarSemana(15)">
+            <span class="week-number">Semana 15</span>
+          </button>
+          <button class="week-btn" onclick="mostrarSemana(16)">
+            <span class="week-number">Semana 16</span>
+          </button>
+        </div>
+      </nav>
 
-      <!-- Botón de acceso al repositorio -->
-      <div class="repositorio-container">
-        <button class="btn-repo" onclick="window.open('https://github.com/jhonRoman-code/BD_II/tree/master/arch/cont', '_blank')">
-          Mostrar contenido en repositorio GitHub
+      <div class="repo-section">
+        <div class="sidebar-divider"></div>
+        <button class="repo-btn" onclick="window.open('https://github.com/jhonRoman-code/BD_II/tree/master/arch/cont', '_blank')">
+          <span class="repo-icon">📁</span>
+          <span class="repo-text">Ver contenido en GitHub</span>
         </button>
       </div>
     </aside>
 
-    <!-- Contenido dinámico -->
-    <section class="contenido">
-      <h2 id="titulo-semana">Selecciona una semana</h2>
-      
-      <!-- Formulario de subida (solo admin) -->
-      <div id="form-subida" style="display:none; margin-bottom:20px;">
-        <h3>Subir archivo</h3>
-        <form id="uploadForm" enctype="multipart/form-data">
-          <input type="file" name="archivo" id="archivo" required>
-          <button type="submit">Subir</button>
-        </form>
-      </div>
+    
 
       <!-- Contenido dinámico -->
-      <div id="contenido-semana">
-        <p>Elige una semana del menú lateral para ver su contenido aquí.</p>
+      <div id="contenido-semana" class="week-content-container">
+        <div class="empty-state">
+          <div class="empty-icon">📚</div>
+          <h3>Contenido de las semanas</h3>
+          <p>Selecciona una semana del menú lateral para visualizar los materiales y archivos disponibles.</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="footer">
     <p>© 2025 - Proyecto Base de Datos II</p>
   </footer>
 
   <script src="script.js"></script>
-
-  <!-- Estilos internos opcionales -->
-  <style>
-    .repositorio-container {
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .btn-repo {
-      background-color: #24292e;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 6px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .btn-repo:hover {
-      background-color: #0366d6;
-    }
-  </style>
 </body>
 </html>

@@ -75,6 +75,7 @@ const savedPic = localStorage.getItem("profilePic");
 if (savedName) document.getElementById("profile-name").textContent = savedName;
 if (savedPic) document.getElementById("profile-pic").src = savedPic;
 
+
 // === Contenido de semanas (local + BD) ===
 const contenidoSemanas = {
   1: `
@@ -146,6 +147,14 @@ const contenidoSemanas = {
     </button>
     <button class="custom-button" onclick="window.open('https://github.com/jhonRoman-code/BD_II/tree/master/arch/cont/S07/Consultas', '_blank')">
     📁 Consultas SQL Completas en GitHub
+    </button>
+  `,
+  10: `
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S10/ACTIVIDAD Sm10.pdf')">
+      🗄️ ACTIVIDAD PRACTICA
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S10/Teoria.pptx')">
+      🗄️ Teoria 
     </button>
   `,
 };
@@ -259,4 +268,3 @@ async function eliminarArchivo(id, semana) {
     alert("Error de conexión al servidor");
   }
 }
-

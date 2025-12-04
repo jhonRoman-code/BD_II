@@ -90,29 +90,14 @@ body {
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: none; /* Eliminar la transición para evitar parpadeos */
   position: relative;
   overflow: hidden;
 }
 
-.menu-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  transition: left 0.3s ease;
-}
-
-.menu-item:hover::before {
-  left: 0;
-}
-
 .menu-item:hover {
   background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
+  transform: translateY(0); /* Eliminar el efecto de transformación para mayor estabilidad */
 }
 
 /* === HERO SECTION MODERNA === */
@@ -333,52 +318,6 @@ body {
   opacity: 0.8;
 }
 
-/* === COMPONENTES ESPECIALES === */
-#welcome-message {
-  text-align: center;
-  font-size: 1.3rem;
-  color: var(--primary);
-  font-weight: 600;
-  margin: 1rem 0 2rem;
-  padding: 1rem;
-  background: rgba(37, 99, 235, 0.1);
-  border-radius: var(--radius);
-  border-left: 4px solid var(--primary);
-}
-
-#admin-panel {
-  text-align: center;
-  margin: 2rem 0;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-#edit-profile {
-  background: var(--bg);
-  padding: 2rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  max-width: 400px;
-  margin: 1rem auto;
-  text-align: center;
-}
-
-#edit-profile input {
-  width: 100%;
-  padding: 0.8rem;
-  margin: 0.5rem 0;
-  border: 2px solid #e5e7eb;
-  border-radius: var(--radius);
-  transition: border-color 0.3s ease;
-}
-
-#edit-profile input:focus {
-  outline: none;
-  border-color: var(--primary);
-}
-
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
   .navbar {
@@ -438,177 +377,50 @@ body {
     font-size: 1.6rem;
   }
 }
-
-/* === ANIMACIONES ADICIONALES === */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* === MEJORAS PARA EL VISOR - MÁS GRANDE Y RESPONSIVE === */
+#visor-contenedor {
+  margin-top: 0;  /* Eliminar cualquier margen superior */
+  width: 100%;  /* El visor ocupará todo el ancho de la pantalla */
+  height: 100vh; /* El visor ocupará toda la altura de la pantalla */
+  min-height: 600px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--bg);
+  border: 1px solid #e5e7eb;
 }
 
-.about-container, .features li {
-  animation: fadeInUp 0.6s ease-out;
+.visor {
+  width: 100%;
+  height: 100%;  /* Aseguramos que el iframe ocupe todo el espacio disponible */
+  border: none;
+  background: white;
 }
 
-.features li:nth-child(2) { animation-delay: 0.1s; }
-.features li:nth-child(3) { animation-delay: 0.2s; }
-.features li:nth-child(4) { animation-delay: 0.3s; }
-.features li:nth-child(5) { animation-delay: 0.4s; }
-
-/* === SCROLLBAR PERSONALIZADO === */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-dark);
-}
-
-/* === LOGIN STYLES === */
-.login-section {
+.visor-mensaje {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 70vh;
-  padding: 2rem;
-}
-
-.login-card {
-  background: var(--bg);
-  padding: 3rem;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-hover);
-  width: 100%;
-  max-width: 450px;
-  text-align: center;
-}
-
-.login-header h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 0.5rem;
-}
-
-.login-header p {
+  height: 100%;
   color: var(--text-light);
-  margin-bottom: 2rem;
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.form-group {
-  position: relative;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 1rem 1rem 1rem 3rem;
-  border: 2px solid #e5e7eb;
-  border-radius: var(--radius);
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  background: var(--bg-secondary);
-}
-
-.form-group input:focus {
-  outline: none;
-  border-color: var(--primary);
-  background: var(--bg);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-}
-
-.input-icon {
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
   font-size: 1.2rem;
 }
 
-.btn-login {
-  background: var(--bg-gradient);
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: var(--radius);
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+/* Responsividad */
+@media (max-width: 768px) {
+  #visor-contenedor {
+    height: calc(80vh - 40px); /* Ajustar el alto en pantallas más pequeñas */
+    min-height: 400px;
+  }
 }
 
-.btn-login:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
+@media (max-width: 480px) {
+  #visor-contenedor {
+    height: calc(70vh - 40px); /* Ajustar aún más en pantallas pequeñas */
+    min-height: 350px;
+  }
 }
 
-.btn-loader {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  border: 2px solid transparent;
-  border-top: 2px solid white;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-.login-message {
-  margin: 1rem 0;
-  padding: 0.8rem;
-  border-radius: var(--radius);
-  font-weight: 500;
-  text-align: center;
-}
-
-.login-info {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background: var(--bg-secondary);
-  border-radius: var(--radius);
-  text-align: left;
-}
-
-.login-info h4 {
-  color: var(--text);
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.credentials p {
-  margin: 0.5rem 0;
-  font-size: 0.9rem;
-  color: var(--text-light);
-}
 
 /* === WEEKS LAYOUT STYLES === */
 /* === BARRA LATERAL DE SEMANAS MEJORADA Y RESPONSIVE === */
@@ -705,25 +517,6 @@ body {
   max-height: calc(100vh - 300px);
   overflow-y: auto;
   padding-right: 5px;
-}
-
-/* Scrollbar personalizado para la barra lateral */
-.weeks-grid::-webkit-scrollbar {
-  width: 6px;
-}
-
-.weeks-grid::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 3px;
-}
-
-.weeks-grid::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 3px;
-}
-
-.weeks-grid::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-dark);
 }
 
 /* === BOTONES DE SEMANAS MEJORADOS === */
@@ -944,130 +737,5 @@ body {
   .sidebar-header h2 {
     font-size: 1.1rem;
     margin-bottom: 0.8rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .weeks-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 0.4rem;
-  }
-  
-  .week-btn {
-    padding: 0.6rem;
-    min-height: 50px;
-  }
-  
-  .week-text {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.4rem;
-  }
-  
-  .repo-btn {
-    padding: 0.8rem;
-    font-size: 0.9rem;
-  }
-  
-  .toggle-sidebar {
-    width: 25px;
-    height: 25px;
-    font-size: 0.7rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .weeks-sidebar {
-    max-height: 140px;
-    padding: 0.6rem;
-  }
-  
-  .weeks-grid {
-    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
-    gap: 0.3rem;
-  }
-  
-  .week-btn {
-    padding: 0.5rem;
-    min-height: 45px;
-    border-radius: 8px;
-  }
-  
-  .week-text {
-    font-size: 0.65rem;
-    padding: 0.2rem 0.3rem;
-    border-radius: 15px;
-  }
-  
-  .sidebar-header h2 {
-    font-size: 1rem;
-    margin-bottom: 0.6rem;
-  }
-  
-  .repo-btn {
-    padding: 0.6rem;
-    font-size: 0.8rem;
-  }
-  
-  .repo-icon {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .weeks-grid {
-    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
-  }
-  
-  .week-btn {
-    padding: 0.4rem;
-    min-height: 40px;
-  }
-  
-  .week-text {
-    font-size: 0.6rem;
-    padding: 0.15rem 0.25rem;
-  }
-}
-
-/* === MEJORAS PARA EL VISOR - MÁS GRANDE Y RESPONSIVE === */
-#visor-contenedor {
-  margin-top: 2rem;
-  width: 100%;
-  height: 80vh;
-  min-height: 600px;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  background: var(--bg);
-  border: 1px solid #e5e7eb;
-}
-
-.visor {
-  width: 100%;
-  height: 100%;
-  border: none;
-  background: white;
-}
-
-.visor-mensaje {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  color: var(--text-light);
-  font-size: 1.2rem;
-}
-
-@media (max-width: 768px) {
-  #visor-contenedor {
-    height: 70vh;
-    min-height: 400px;
-  }
-}
-
-@media (max-width: 480px) {
-  #visor-contenedor {
-    height: 60vh;
-    min-height: 350px;
   }
 }

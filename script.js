@@ -157,6 +157,22 @@ const contenidoSemanas = {
       🗄️ Teoria 
     </button>
   `,
+  13: `
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S13/Semana13.pdf')">
+      🗄️ MONITOREO Y MANTENIMIENTO SQL Server
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S13/Practica13.pdf')">
+      🗄️ PRACTICA  
+    </button>
+  `,
+  14: `
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S14/Semana14.pdf')">
+      🗄️ AUTOMATIZACION Y MANTENIMIENTO 
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S14/Practica14.pdf')">
+      🗄️ PRACTICA
+    </button>
+  `,
 };
 
 
@@ -166,14 +182,18 @@ const contenido = document.getElementById("contenido-semana");
 function mostrarIframe(url) {
   const visor = document.getElementById("visor");
   const visorMensaje = document.getElementById("visor-mensaje");
+
+  // Configura el iframe con la URL seleccionada
   if (visor) {
     visor.src = url;
-    visor.style.display = "block";
+    visor.style.display = "block";  // Hacer visible el visor
+    visor.style.height = "100%";  // Asegura que el iframe ocupe el 100% de la altura disponible
   }
   if (visorMensaje) {
-    visorMensaje.style.display = "none";
+    visorMensaje.style.display = "none";  // Ocultar el mensaje de "Selecciona un archivo"
   }
 }
+
 
 async function mostrarSemana(num) {
   if (tituloSemana) {

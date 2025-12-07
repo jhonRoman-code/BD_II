@@ -149,11 +149,16 @@ const contenidoSemanas = {
     📁 Consultas SQL Completas en GitHub
     </button>
   `,
+  9: `
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S09/Semana9.pdf')">
+      🗄️ EJERCICIOS PRACTICOS
+    </button>
+  `,
   10: `
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S10/ACTIVIDAD Sm10.pdf')">
       🗄️ ACTIVIDAD PRACTICA
     </button>
-    <button class="custom-button" onclick="mostrarIframe('arch/cont/S10/Teoria.pptx')">
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S10/Teoria.pdf')">
       🗄️ Teoria 
     </button>
   `,

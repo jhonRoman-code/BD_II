@@ -1,0 +1,7 @@
+USE master;
+GO
+IF EXISTS(SELECT * FROM sys.databases WHERE name = 'QhatuPERU')
+    DROP DATABASE QhatuPERU;
+GO
+CREATE DATABASE QhatuPERU;
+GO

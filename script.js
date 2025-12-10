@@ -155,16 +155,38 @@ const contenidoSemanas = {
     </button>
   `,
   10: `
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S10/Teoria.pdf')">
+      🗄️ Teoria: Administracion Esencial
+    </button>
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S10/ACTIVIDAD Sm10.pdf')">
       🗄️ ACTIVIDAD PRACTICA
+    </button>    
+  `,
+  11: `
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S11/Teoria S11.pdf')">
+      🗄️ Teoria: Seguridad y control de Acceso 
     </button>
-    <button class="custom-button" onclick="mostrarIframe('arch/cont/S10/Teoria.pdf')">
-      🗄️ Teoria 
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S11/Semana11.pdf')">
+      🗄️ Semana 11
+    </button>    
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S11/Practica Semana 11.pdf')">
+      🗄️ Practica
+    </button>
+  `,
+  12: `
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S12/teoria S12.pdf')">
+      🗄️ Teoria: Respaldo y Recuperacion
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S12/.pdf')">
+      🗄️ Semana 12
     </button>
   `,
   13: `
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S13/teoria S13.pdf')">
+        🗄️ Teoria: Monitoreo y Rendimiento
+      </button>
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S13/Semana13.pdf')">
-      🗄️ MONITOREO Y MANTENIMIENTO SQL Server
+      🗄️ Monitoreo SQL Server
     </button>
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S13/Practica13.pdf')">
       🗄️ PRACTICA  
@@ -172,7 +194,7 @@ const contenidoSemanas = {
   `,
   14: `
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S14/Semana14.pdf')">
-      🗄️ AUTOMATIZACION Y MANTENIMIENTO 
+      🗄️ Teoria: Automatizacion y Mantenimiento 
     </button>
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S14/Practica14.pdf')">
       🗄️ PRACTICA

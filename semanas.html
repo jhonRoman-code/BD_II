@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <header class="navbar">
     <div class="logo-container">
       <img src="arch/img/logo.png" alt="Logo" class="logo">
@@ -25,66 +26,40 @@
   </header>
 
   <main class="weeks-layout">
-    <!-- Sidebar de semanas -->
+
+    <!-- Sidebar -->
     <aside class="weeks-sidebar" id="weeks-sidebar">
+
       <div class="sidebar-header">
         <h2>CONTENIDO</h2>
         <div class="sidebar-divider"></div>
       </div>
-      
+
       <nav class="weeks-nav">
         <div class="weeks-grid">
-          <button class="week-btn" onclick="mostrarSemana(1)">
-            <span class="week-number">Semana 1</span>
-          </button>
-          <button class="week-btn" onclick="mostrarSemana(2)">
-            <span class="week-number">Semana 2</span>
-          </button>
-          <button class="week-btn" onclick="mostrarSemana(3)">
-            <span class="week-number">Semana 3</span>
-          </button>
-          <button class="week-btn" onclick="mostrarSemana(4)">
-            <span class="week-number">Semana 4</span>
-          </button>
-          <button class="week-btn" onclick="mostrarSemana(5)">
-            <span class="week-number">Semana 5</span>
-          </button>
-          <button class="week-btn" onclick="mostrarSemana(6)">
-            <span class="week-number">Semana 6</span>
-          </button>
-          <button class="week-btn" onclick="mostrarSemana(7)">
-            <span class="week-number">Semana 7</span>
-          </button>
-          <button class="week-btn" onclick="mostrarSemana(8)">
-            <span class="week-number">Semana 8</span>
-          </button>
-          <button class="week-btn" onclick="mostrarSemana(9)">
-            <span class="week-number">Semana 9</span>
-          </button>
-          <button class="week-btn" onclick="mostrarSemana(10)">
-            <span class="week-number">Semana 10</span>
-          </button>
-          <button class="week-btn" onclick="mostrarSemana(11)">
-            <span class="week-number">Semana 11</span>
-          </button>
-          <button class="week-btn" onclick="mostrarSemana(12)">
-            <span class="week-number">Semana 12</span>
-          </button>
-          <button class="week-btn" onclick="mostrarSemana(13)">
-            <span class="week-number">Semana 13</span>
-          </button>
-          <button class="week-btn" onclick="mostrarSemana(14)">
-            <span class="week-number">Semana 14</span>
-          </button>
-          <button class="week-btn" onclick="mostrarSemana(15)">
-            <span class="week-number">Semana 15</span>
-          </button>
-          <button class="week-btn" onclick="mostrarSemana(16)">
-            <span class="week-number">Semana 16</span>
-          </button>
+
+          <!-- Botones de semanas -->
+          <button class="week-btn" onclick="mostrarSemana(1)"><span class="week-number">Semana 1</span></button>
+          <button class="week-btn" onclick="mostrarSemana(2)"><span class="week-number">Semana 2</span></button>
+          <button class="week-btn" onclick="mostrarSemana(3)"><span class="week-number">Semana 3</span></button>
+          <button class="week-btn" onclick="mostrarSemana(4)"><span class="week-number">Semana 4</span></button>
+          <button class="week-btn" onclick="mostrarSemana(5)"><span class="week-number">Semana 5</span></button>
+          <button class="week-btn" onclick="mostrarSemana(6)"><span class="week-number">Semana 6</span></button>
+          <button class="week-btn" onclick="mostrarSemana(7)"><span class="week-number">Semana 7</span></button>
+          <button class="week-btn" onclick="mostrarSemana(8)"><span class="week-number">Semana 8</span></button>
+          <button class="week-btn" onclick="mostrarSemana(9)"><span class="week-number">Semana 9</span></button>
+          <button class="week-btn" onclick="mostrarSemana(10)"><span class="week-number">Semana 10</span></button>
+          <button class="week-btn" onclick="mostrarSemana(11)"><span class="week-number">Semana 11</span></button>
+          <button class="week-btn" onclick="mostrarSemana(12)"><span class="week-number">Semana 12</span></button>
+          <button class="week-btn" onclick="mostrarSemana(13)"><span class="week-number">Semana 13</span></button>
+          <button class="week-btn" onclick="mostrarSemana(14)"><span class="week-number">Semana 14</span></button>
+          <button class="week-btn" onclick="mostrarSemana(15)"><span class="week-number">Semana 15</span></button>
+          <button class="week-btn" onclick="mostrarSemana(16)"><span class="week-number">Semana 16</span></button>
+
         </div>
       </nav>
 
+      <!-- Botón GitHub (NO SE QUITÓ NADA) -->
       <div class="repo-section">
         <div class="sidebar-divider"></div>
         <button class="repo-btn" onclick="window.open('https://github.com/jhonRoman-code/BD_II/tree/master/arch/cont', '_blank')">
@@ -92,19 +67,18 @@
           <span class="repo-text">Ver contenido en GitHub</span>
         </button>
       </div>
+
     </aside>
 
-    
-
-      <!-- Contenido dinámico -->
-      <div id="contenido-semana" class="week-content-container">
-        <div class="empty-state">
-          <div class="empty-icon"></div>
-          <h3>Contenido de las semanas</h3>
-          <p>Selecciona una semana del menú lateral para visualizar los materiales y archivos disponibles.</p>
-        </div>
+    <!-- Contenido dinámico -->
+    <div id="contenido-semana" class="week-content-container">
+      <div class="empty-state">
+        <div class="empty-icon"></div>
+        <h3>Contenido de las semanas</h3>
+        <p>Selecciona una semana del menú lateral para visualizar los materiales y archivos disponibles.</p>
       </div>
-    </section>
+    </div>
+
   </main>
 
   <footer class="footer">
@@ -112,5 +86,6 @@
   </footer>
 
   <script src="script.js"></script>
+
 </body>
 </html>

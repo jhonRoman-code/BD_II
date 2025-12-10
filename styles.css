@@ -422,216 +422,6 @@ body {
 }
 
 
-/* === WEEKS LAYOUT STYLES === */
-/* === BARRA LATERAL DE SEMANAS MEJORADA Y RESPONSIVE === */
-.weeks-layout {
-  display: flex;
-  min-height: calc(100vh - 80px);
-  position: relative;
-}
-
-.weeks-sidebar {
-  width: 280px;
-  background: var(--bg);
-  border-right: 1px solid #e5e7eb;
-  padding: 1.5rem;
-  overflow-y: auto;
-  box-shadow: var(--shadow);
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 100;
-}
-
-.weeks-sidebar.collapsed {
-  width: 60px;
-  overflow: hidden;
-}
-
-.weeks-sidebar.collapsed .sidebar-header,
-.weeks-sidebar.collapsed .week-text,
-.weeks-sidebar.collapsed .repo-text {
-  display: none;
-}
-
-.weeks-sidebar.collapsed .weeks-grid {
-  gap: 0.5rem;
-}
-
-.weeks-sidebar.collapsed .week-btn {
-  padding: 0.8rem;
-  justify-content: center;
-}
-
-.weeks-sidebar.collapsed .repo-btn {
-  padding: 0.8rem;
-  justify-content: center;
-}
-
-.sidebar-header {
-  position: relative;
-}
-
-.sidebar-header h2 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.toggle-sidebar {
-  position: absolute;
-  top: 0;
-  right: -15px;
-  background: var(--primary);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  transition: all 0.3s ease;
-  z-index: 101;
-}
-
-.toggle-sidebar:hover {
-  background: var(--primary-dark);
-  transform: scale(1.1);
-}
-
-.sidebar-divider {
-  height: 2px;
-  background: var(--bg-gradient);
-  margin: 1.5rem 0;
-  border-radius: 1px;
-}
-
-.weeks-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.8rem;
-  max-height: calc(100vh - 300px);
-  overflow-y: auto;
-  padding-right: 5px;
-}
-
-/* === BOTONES DE SEMANAS MEJORADOS === */
-.week-btn {
-  display: flex;
-  align-items: center;
-  padding: 1rem 1.2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: 2px solid transparent;
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: left;
-  width: 100%;
-  color: white;
-  font-weight: 600;
-  position: relative;
-  overflow: hidden;
-}
-
-.week-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s ease;
-}
-
-.week-btn:hover::before {
-  left: 100%;
-}
-
-.week-btn:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  transform: translateX(5px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
-  color: white;
-}
-
-.week-btn.active {
-  background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
-  color: white;
-}
-
-.week-text {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-align: center;
-  flex: 1;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.week-btn:hover .week-text {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.05);
-}
-
-.week-btn.active .week-text {
-  background: rgba(255, 255, 255, 0.3);
-  font-weight: 700;
-}
-
-.repo-section {
-  margin-top: auto;
-  padding-top: 1rem;
-  border-top: 1px solid #e5e7eb;
-}
-
-.repo-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  width: 100%;
-  padding: 1rem;
-  background: #24292e;
-  color: white;
-  border: none;
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
-
-.repo-btn:hover {
-  background: #0366d6;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-}
-
-.repo-icon {
-  font-size: 1.2rem;
-}
-
-.weeks-content {
-  flex: 1;
-  padding: 2rem;
-  background: var(--bg-secondary);
-  overflow-y: auto;
-  transition: all 0.3s ease;
-}
-
-.weeks-sidebar.collapsed ~ .weeks-content {
-  margin-left: -220px;
-}
-
 /* === RESPONSIVE DESIGN SUPER MEJORADO === */
 @media (max-width: 1200px) {
   .weeks-sidebar {
@@ -739,3 +529,174 @@ body {
     margin-bottom: 0.8rem;
   }
 }
+
+/* =========================================
+   CONTENIDO: Ajustes para que SIEMPRE esté arriba
+   y sea horizontal en móviles, tablets y PC
+========================================= */
+
+/* Contenedor principal de todo */
+.weeks-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* =========================================
+   SECCIÓN DE CONTENIDO (la barra de semanas)
+========================================= */
+.weeks-sidebar {
+  width: 100%;
+  max-width: 100%;
+  background: #ffffff;
+  padding: 20px 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin: 0 auto 20px auto;
+}
+
+/* Título "CONTENIDO" */
+.sidebar-header {
+  text-align: center;
+}
+
+.sidebar-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: 1px;
+}
+
+.sidebar-divider {
+  width: 90%;
+  height: 3px;
+  background: linear-gradient(90deg, #8a56ff, #5866ff);
+  margin: 10px auto 20px auto;
+  border-radius: 12px;
+}
+
+/* =========================================
+   GRID DE SEMANAS
+========================================= */
+
+.weeks-grid {
+  display: flex;
+  flex-wrap: nowrap;           /* 🔥 Nunca se va a romper */
+  overflow-x: auto;            /* 🔥 Scroll horizontal en móvil */
+  gap: 15px;
+  padding-bottom: 5px;
+  scroll-behavior: smooth;
+}
+
+.weeks-grid::-webkit-scrollbar {
+  height: 7px;
+}
+
+.weeks-grid::-webkit-scrollbar-thumb {
+  background: #7a57ff;
+  border-radius: 10px;
+}
+
+.weeks-grid::-webkit-scrollbar-track {
+  background: #e6e6e6;
+  border-radius: 10px;
+}
+
+/* Botones de semanas */
+.week-btn {
+  min-width: 140px;            /* 🔥 Tamaño fijo para que se vean iguales */
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #7a57ff, #5a4bff);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;               /* 🔥 Evita que se compriman */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: 0.2s ease;
+}
+
+.week-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #6a47ff, #4838ff);
+}
+
+/* =========================================
+   BOTÓN GITHUB
+========================================= */
+
+.repo-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.repo-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #006dff, #004eff);
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+}
+
+.repo-btn:hover {
+  transform: scale(1.03);
+}
+
+/* =========================================
+   CONTENIDO DINÁMICO (la parte blanca)
+========================================= */
+.week-content-container {
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  min-height: 400px;
+}
+
+/* Estado vacío */
+.empty-state {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.empty-state h3 {
+  font-size: 22px;
+  color: #333;
+}
+
+.empty-state p {
+  color: #777;
+  font-size: 16px;
+}
+
+/* =========================================
+   RESPONSIVE – Mantener diseño SIEMPRE igual
+========================================= */
+
+/* 🔥 Ningún media query modificará la barra */
+/* Solo dejaremos que haga scroll horizontal */
+/* para mantener EXACTAMENTE tu diseño */
+
+@media (max-width: 600px) {
+  .weeks-sidebar {
+    padding: 15px 10px;
+  }
+
+  .week-btn {
+    min-width: 130px;
+  }
+
+  .sidebar-header h2 {
+    font-size: 18px;
+  }
+}
+

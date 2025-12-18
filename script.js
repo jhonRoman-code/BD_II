@@ -200,7 +200,7 @@ const contenidoSemanas = {
   `,
    15: `
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S15/teoria S15.pdf')">
-      🗄️ Teoria: Automatizacion y Mantenimiento 
+      🗄️ Teoria: SQL Server en la nube 
     </button>
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/ManualAzure.pdf')">
       🗄️ Manual para crear cuenta en Azure
@@ -214,9 +214,9 @@ const contenidoSemanas = {
   `,
   16: `
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S16/teoria S16.pdf')">
-      🗄️ Teoria: Automatizacion y Mantenimiento 
+      🗄️ Teoria: Continuidad Operativa 
     </button>
-    <button class="custom-button" onclick="mostrarIframe('arch/cont/S16/Practica 16.pdf')">
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S16/Practica S16.pdf')">
       🗄️ PRACTICA
     </button>
   `,

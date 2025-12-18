@@ -133,9 +133,7 @@ const contenidoSemanas = {
     </button>
   `,
   7: `
-    <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/ManualAzure.pdf')">
-      🗄️ Manual para crear cuenta en Azure
-    </button>
+    c
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/RepositorioAzure.pdf')">
       🗄️ Manual para subir repositorio en Azure
     </button>
@@ -177,7 +175,7 @@ const contenidoSemanas = {
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S12/teoria S12.pdf')">
       🗄️ Teoria: Respaldo y Recuperacion
     </button>
-    <button class="custom-button" onclick="mostrarIframe('arch/cont/S12/.pdf')">
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S12/Practica 12.pdf')">
       🗄️ Semana 12
     </button>
   `,
@@ -197,6 +195,28 @@ const contenidoSemanas = {
       🗄️ Teoria: Automatizacion y Mantenimiento 
     </button>
     <button class="custom-button" onclick="mostrarIframe('arch/cont/S14/Practica14.pdf')">
+      🗄️ PRACTICA
+    </button>
+  `,
+   15: `
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S15/teoria S15.pdf')">
+      🗄️ Teoria: Automatizacion y Mantenimiento 
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/ManualAzure.pdf')">
+      🗄️ Manual para crear cuenta en Azure
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S07/RepositorioAzure.pdf')">
+      🗄️ Manual para subir a Azure
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S15/Practica 15.pdf')">
+      🗄️ PRACTICA
+    </button>
+  `,
+  16: `
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S16/teoria S16.pdf')">
+      🗄️ Teoria: Automatizacion y Mantenimiento 
+    </button>
+    <button class="custom-button" onclick="mostrarIframe('arch/cont/S16/Practica 16.pdf')">
       🗄️ PRACTICA
     </button>
   `,
